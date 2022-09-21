@@ -1,0 +1,31 @@
+class Solution{
+    static String ReFormatString(String S, int K){
+        String temp = "",ans = "";
+        if(S.length() <= Math.pow(10,5) && S.length()>=1 && K>=1 && K<=Math.pow(10,4)){
+            for(int i=S.length()-1; i>=0; i--){
+                if(S.charAt(i) == '-'){
+                    continue;
+                }
+                if(S.charAt(i)>='a' && S.charAt(i)<='z'){
+                    temp += (char)(S.charAt(i) - 32);
+                }
+                else{
+                    temp += S.charAt(i);
+                }
+            }
+            for(int i=temp.length()-1; i>=0; i--){
+                ans += temp.charAt(i);
+                if(i == 0)
+                    continue;
+                if(i % K == 0) {
+                    ans += "-";
+                }
+            }
+            return ans;
+        }
+        else{
+            return ans;
+        }
+    }
+    
+}
